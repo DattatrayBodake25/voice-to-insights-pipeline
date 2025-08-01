@@ -1,0 +1,30 @@
+[
+  {
+    "speaker": "SPEAKER_00",
+    "text": " I'm just calling to say I'm absolutely blown away by the camera pro one. This is Ashley Perez and I purchased it under order number 987654. The image quality is incredible and it's so easy to use. I've taken some amazing photos with it already. Thank you so much for making such a fantastic product. I will definitely recommend this to all my friends.",
+    "sentiment": {
+      "label": "5 stars",
+      "score": 0.9630961418151855
+    },
+    "tonality": {
+      "label": "admiration",
+      "score": 0.5271772742271423
+    },
+    "intent": {
+      "labels": [
+        "feedback",
+        "sales",
+        "query",
+        "technical support",
+        "complaint"
+      ],
+      "scores": [
+        0.9976494908332825,
+        0.8544296622276306,
+        0.7805579900741577,
+        0.006375935394316912,
+        0.001206589862704277
+      ]
+    }
+  }
+]

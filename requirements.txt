@@ -1,0 +1,12 @@
+librosa
+transformers
+torch
+pyannote.audio
+google-generativeai
+langchain
+langchain-google-genai
+langchain-community
+sentence-transformers
+faiss-cpu
+scikit-learn
+python-dotenv

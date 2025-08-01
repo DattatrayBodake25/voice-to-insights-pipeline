@@ -1,0 +1,23 @@
+Technical Support Guidelines
+
+Common Issues and Solutions:
+
+1. Product not turning on:
+   - Check power connection
+   - Try different power outlet
+   - Contact support if issue persists
+
+2. Software installation problems:
+   - Ensure system meets minimum requirements
+   - Disable antivirus temporarily during installation
+   - Download latest version from our website
+
+Escalation Path:
+- Level 1: Basic troubleshooting (all agents)
+- Level 2: Advanced technical support (specialized team)
+- Level 3: Engineering team (for critical issues)
+
+Response Time SLAs:
+- Critical issues: 2 hour response
+- High priority: 4 hour response
+- Normal issues: 24 hour response

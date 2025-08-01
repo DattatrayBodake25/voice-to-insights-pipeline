@@ -1,0 +1,18 @@
+Shipping and Delivery FAQ
+
+Q: How long does shipping take?
+A: Standard shipping takes 3-5 business days. Express shipping is available for 1-2 day delivery.
+
+Q: Can I track my order?
+A: Yes, all orders receive a tracking number via email once shipped.
+
+Q: What if my package is lost or damaged?
+A: Contact support immediately with your order number. We will:
+   - Investigate with the carrier
+   - Reship the product if confirmed lost
+   - Offer refund or replacement for damaged items
+
+International Shipping:
+- Additional customs fees may apply
+- Delivery times vary by country
+- Some product restrictions may apply

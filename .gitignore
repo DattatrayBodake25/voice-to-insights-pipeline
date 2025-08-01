@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.env
+.env.*
+venv
+
+# Model weights (if any are downloaded locally)
+*.pt
+*.bin
+
+# OS-generated
+.DS_Store
+Thumbs.db
