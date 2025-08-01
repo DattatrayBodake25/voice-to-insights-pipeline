@@ -1,10 +1,10 @@
-# 🎧 Voice-to-Insights Pipeline for Customer Support Calls
+# Voice-to-Insights Pipeline
 
 This project is an end-to-end AI pipeline that transforms **customer-agent phone calls** into **actionable business insights** using automatic speech recognition (ASR), large language models (LLMs), and retrieval-augmented generation (RAG). It supports **multilingual input** (English, Hindi, Hinglish), **speaker diarization**, **sentiment/tonality/intent analysis**, and **summary generation** with context-aware **follow-up action recommendations**.
 
 ---
 
-## 🧩 Features
+## Features
 
 ✅ Transcribe customer support audio recordings using Whisper  
 ✅ Diarize speakers (agent vs. customer)  
@@ -18,8 +18,8 @@ This project is an end-to-end AI pipeline that transforms **customer-agent phone
 
 ---
 
-## 📁 Project Structure
-
+## Project Structure
+```
 ├── audio_processor.py # Audio loading, normalization, silence removal
 ├── analyzer.py # Sentiment, Tonality, Intent analysis
 ├── config.py # Centralized configuration and model paths
@@ -38,11 +38,11 @@ This project is an end-to-end AI pipeline that transforms **customer-agent phone
 │ ├── summary.txt # Generated summary
 │ └── followup.txt # Suggested follow-up actions
 └── .env # API keys (not committed)
-
+```
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. 🔧 Prerequisites
 
@@ -55,25 +55,22 @@ Install dependencies:
 
 ```bash
 pip install -r requirements.txt
-
+```
 .env file (required):
-
-ini
-Copy
-Edit
+```
 HF_TOKEN=your_huggingface_token
 GEMINI_API_KEY=your_google_api_key
-2. 🎙️ Input Requirements
-Upload 3–5 customer support call recordings to data/test_audios/
+```
 
-Format: WAV or MP3 (mono/stereo, max 5 minutes)
+### 2. Input Requirements
+ - Upload 3–5 customer support call recordings to data/test_audios/
 
-Optional: Add sample FAQs/policies as .txt files in data/documents/
+- Format: WAV or MP3 (mono/stereo, max 5 minutes)
 
-3. 🧪 Run the Pipeline (Example Flow)
-python
-Copy
-Edit
+- Optional: Add sample FAQs/policies as .txt files in data/documents/
+
+### 3. Run the Pipeline (Example Flow)
+```python
 # Step 1: Transcribe and diarize audio
 from transcriber import Transcriber
 t = Transcriber()
@@ -101,29 +98,32 @@ import json
 with open("outputs/analysis.json", "w") as f: json.dump(analysis, f, indent=2)
 with open("outputs/summary.txt", "w") as f: f.write(summary)
 with open("outputs/followup.txt", "w") as f: f.write(followups)
-4. ✅ Evaluation
-Evaluate transcription, summary, and insight quality using:
+```
 
-python
-Copy
-Edit
+### 4. Evaluation
+Evaluate transcription, summary, and insight quality using:
+```python
 from evaluator import SystemEvaluator
 evaluator = SystemEvaluator()
 
 # Example: Evaluate transcription quality
 metrics = evaluator.evaluate_transcription(ground_truth, predicted)
 print(metrics)  # {'word_error_rate': ..., 'speaker_accuracy': ...}
-📊 Models Used
-Task	Model
-STT	openai/whisper-tiny (via HuggingFace Transformers)
-Diarization	pyannote/speaker-diarization
-Sentiment	nlptown/bert-base-multilingual-uncased-sentiment
-Tonality	bhadresh-savani/bert-base-go-emotion
-Intent Detection	MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
-RAG Embeddings	sentence-transformers/all-MiniLM-L6-v2
-LLM	gemini-2.0-flash (Google Generative AI)
+```
 
-📌 Highlights
+### Models Used
+```
+Task	                 Model
+STT	                 openai/whisper-tiny (via HuggingFace Transformers)
+Diarization	         pyannote/speaker-diarization
+Sentiment	           nlptown/bert-base-multilingual-uncased-sentiment
+Tonality	           bhadresh-savani/bert-base-go-emotion
+Intent Detection	   MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+RAG Embeddings	     sentence-transformers/all-MiniLM-L6-v2
+LLM	                 gemini-2.0-flash (Google Generative AI)
+```
+
+##  Highlights
 ✅ Multilingual Audio Support: Hindi, English, Hinglish
 
 ✅ Speaker-Aware Transcription: Diarization with time segments
@@ -134,11 +134,9 @@ LLM	gemini-2.0-flash (Google Generative AI)
 
 ✅ RAG for Realistic, Contextual Responses
 
-📚 Example Output (Real Sample)
+## Example Output (Real Sample)
 Transcription:
-json
-Copy
-Edit
+```json
 [
   {
     "speaker": "SPEAKER_00",
@@ -147,43 +145,21 @@ Edit
     "text": "I'm just calling to say I'm absolutely blown away by the camera pro one..."
   }
 ]
-Summary:
-sql
-Copy
-Edit
+```
+
+## Summary:
 Ashley Perez called to express overwhelming positive feedback regarding the "camera pro one"...
-Follow-up Suggestions:
-Send thank you email
 
-Ask for testimonial
+## Follow-up Suggestions:
+- Send thank you email
+- Ask for testimonial
+- Offer discount (optional)
 
-Offer discount (optional)
+## Future Improvements
+- Add CLI or Streamlit UI for user-friendly interaction
 
-🧠 Future Improvements
-Add CLI or Streamlit UI for user-friendly interaction
+- Support longer recordings with chunked transcription
 
-Support longer recordings with chunked transcription
+- Integrate automated feedback loop to improve model selection
 
-Integrate automated feedback loop to improve model selection
-
-Add multilingual prompt translation for Gemini
-
-📬 Contact
-Developer: Dattatray Bodake
-Feel free to reach out via GitHub or LinkedIn for feedback or collaboration.
-
-📜 License
-This project is for educational and demonstration purposes only. Not intended for production use without further security and compliance checks.
-
-yaml
-Copy
-Edit
-
----
-
-Let me know if you’d like:
-- A **flow diagram** or architecture visual
-- An **auto-run notebook wrapper**
-- A version tailored to a **specific company or dataset**
-
-Happy to help you polish this for final submission!
+- Add multilingual prompt translation for Gemini
